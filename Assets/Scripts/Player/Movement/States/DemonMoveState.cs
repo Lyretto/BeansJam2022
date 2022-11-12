@@ -14,21 +14,38 @@ public class DemonMoveState : PlayerBaseState
     public override void Enter()
     {
         stateMachine.velocity.y = Physics.gravity.y;
-
-        stateMachine.Animator.CrossFadeInFixedTime(moveBlendTreeHash, CrossFadeDuration);
     }
 
     public override void Tick()
     {
-        CalculateMoveDirection();
+        CalculateMoveRageDirection();
         FaceMoveDirection();
-        Move();
+        RagedMove();
 
-        stateMachine.Animator.SetFloat(moveSpeedHash, stateMachine.InputReader.GetRawMovement().sqrMagnitude > 0f ? 1f : 0f, AnimationDampTime, Time.deltaTime);
+        stateMachine.Animator.SetFloat(moveSpeedHash, new Vector3(stateMachine.velocity.x, 0, stateMachine.velocity.z).sqrMagnitude > 0f ? 1f : 0f, AnimationDampTime, Time.deltaTime);
     }
 
     public override void Exit()
+    { }
+
+
+    private void CalculateMoveRageDirection()
     {
-        throw new System.NotImplementedException();
+        Vector3 cameraRight = new(stateMachine.MainCamera.right.x, 0, stateMachine.MainCamera.right.z);
+
+        var moveDirection = cameraRight.normalized * stateMachine.InputReader.GetRawMovement().x;
+
+        // stateMachine.velocity.x = Mathf.Lerp(stateMachine.velocity.x, moveDirection.x * stateMachine.RageSpeed, stateMachine.RageControl);
+        // stateMachine.velocity.z = Mathf.Lerp(stateMachine.velocity.z, moveDirection.z * stateMachine.RageSpeed, stateMachine.RageControl);
+
+        var normalizedVector = new Vector3(stateMachine.velocity.x, 0, stateMachine.velocity.z).normalized;
+
+        stateMachine.velocity.x = normalizedVector.x * stateMachine.RageSpeed;
+        stateMachine.velocity.z = normalizedVector.y * stateMachine.RageSpeed;
+    }
+    
+    private void RagedMove()
+    {
+        stateMachine.Controller.Move(stateMachine.velocity * Time.deltaTime);
     }
 }

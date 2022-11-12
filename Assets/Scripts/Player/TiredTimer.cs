@@ -6,7 +6,7 @@ public class TiredTimer : MonoBehaviour
     public float tiredTime;
     public float timeMulti;
 
-    private void Start()
+    public void StartTimer()
     {
         StartCoroutine(TickTimer());
     }
