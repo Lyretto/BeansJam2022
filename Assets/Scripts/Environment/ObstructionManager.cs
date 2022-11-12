@@ -21,18 +21,18 @@ public class ObstructionManager : MonoBehaviour
         }
     }
     
-    public void SpawnRandomObstruction(Vector3 position, Transform parent)
-    {
-        var newObstruction =  Instantiate(obstructionsPrefabs[Random.Range(0, obstructionsPrefabs.Count)], position, Quaternion.identity, parent ? parent : transform);
-        remaining.Add(newObstruction.GetComponent<Obscrutction>());
-    }
+    // public void SpawnRandomObstruction(Vector3 position, Transform parent)
+    // {
+    //     var newObstruction =  Instantiate(obstructionsPrefabs[Random.Range(0, obstructionsPrefabs.Count)], position, Quaternion.identity, parent ? parent : transform);
+    //     remaining.Add(newObstruction.GetComponent<Obscrutction>());
+    // }
 
     public void RemoveObstruction(Obscrutction destroyedOb)
     {
         remaining.Remove(destroyedOb);
         if (remaining.Count <= 0)
         {
-            //TODO GAME END
+            GameEvents.Instance.lastObsctructionDestroyed.Invoke();
         }
     }
 }

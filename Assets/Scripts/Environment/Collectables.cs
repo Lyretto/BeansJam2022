@@ -1,13 +1,16 @@
 public class Collectables : Interactables
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Interact()
+    {
+        PickUpItem();
+    }
+
+    private void PickUpItem()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void PlaceItem()
     {
         
     }

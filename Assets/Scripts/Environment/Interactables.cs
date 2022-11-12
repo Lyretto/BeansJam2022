@@ -1,18 +1,20 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class Interactables : MonoBehaviour
+public abstract class Interactables : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private List<GameObject> meshs;
+    private void Awake()
     {
-        
+        meshs.AddRange( GetComponentsInChildren<MeshRenderer>().ToList().Select(m => m.gameObject));
     }
 
-    // Update is called once per frame
-    void Update()
+    public abstract void Interact();
+
+    public void Highlight()
     {
-        
+        meshs.ForEach(m => m.layer = 10);
     }
 }

@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(CharacterController))]
 public class PlayerStateMachine : StateMachine
 {
@@ -17,7 +16,7 @@ public class PlayerStateMachine : StateMachine
         if (Camera.main is not null) MainCamera = Camera.main.transform;
 
         InputReader = Input.Instance;
-        Animator = GetComponent<Animator>();
+        Animator = GetComponentInChildren<Animator>();
         Controller = GetComponent<CharacterController>();
 
         SwitchState(new PlayerMoveState(this));

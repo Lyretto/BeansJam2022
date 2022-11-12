@@ -28,14 +28,20 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
        GameEvents.Instance.tiredTimerExpired.AddListener(SwitchToDemon);
+       GameEvents.Instance.togglePause.AddListener(Paused);
     }
 
     private void OnDisable()
     {
         if (!GameEvents.Instance) return;
         GameEvents.Instance.tiredTimerExpired.RemoveListener(SwitchToDemon);
+        GameEvents.Instance.togglePause.RemoveListener(Paused);
     }
 
+    private void Paused(bool paused)
+    {
+        Time.timeScale = paused ? 0 : 1;
+    }
 
     private IEnumerator Start()
     {
