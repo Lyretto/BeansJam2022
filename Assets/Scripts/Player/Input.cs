@@ -46,6 +46,12 @@ public class Input : MonoBehaviour
         playerInput.SwitchCurrentActionMap(InputMap.Player.ToString());
         GameEvents.Instance.togglePause.Invoke(false);
     }
+
+    public void Interact(InputAction.CallbackContext context)
+    {
+        if (!context.started) return;
+        GameEvents.Instance.interactInput.Invoke();
+    }
 }
 
 public enum InputMap

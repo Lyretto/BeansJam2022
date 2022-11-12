@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -9,6 +8,7 @@ public abstract class Interactables : MonoBehaviour
     private void Awake()
     {
         meshs.AddRange( GetComponentsInChildren<MeshRenderer>().ToList().Select(m => m.gameObject));
+        gameObject.tag = "Interactable";
     }
 
     public abstract void Interact();

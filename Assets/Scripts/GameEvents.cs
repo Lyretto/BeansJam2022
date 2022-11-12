@@ -27,4 +27,6 @@ public class GameEvents : MonoBehaviour
     public UnityEvent<bool> togglePause;
 
     public UnityEvent<Interactables> contactInteractable;
+
+    public UnityEvent interactInput;
 }
