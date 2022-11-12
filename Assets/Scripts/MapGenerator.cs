@@ -22,13 +22,13 @@ public class MapGenerator : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        maxBuilding = (int)(buildingPercentage * objectAmount);
+    {        
         GenerateMap();
     }
 
     void GenerateMap()
     {
+        maxBuilding = (int)(buildingPercentage * objectAmount);
         for (int i = 0; i < objectAmount; i++)
         {
             ChooseObject();
@@ -52,6 +52,7 @@ public class MapGenerator : MonoBehaviour
     void PlaceObject(Vector3 pos)
     {
         GameObject clone = Instantiate(itemToSpread, pos, Quaternion.identity);
+        clone.transform.localRotation = Quaternion.Euler(new Vector3(0, Random.Range(0f, 360f), 0));
         itemToSpread = null;
     }
 
