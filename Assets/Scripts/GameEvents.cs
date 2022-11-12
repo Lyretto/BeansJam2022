@@ -21,4 +21,10 @@ public class GameEvents : MonoBehaviour
     }
 
     public UnityEvent tiredTimerExpired;
+
+    public UnityEvent lastObsctructionDestroyed;
+
+    public UnityEvent<bool> togglePause;
+
+    public UnityEvent<Interactables> contactInteractable;
 }
