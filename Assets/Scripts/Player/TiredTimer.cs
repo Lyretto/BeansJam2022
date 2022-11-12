@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TiredTimer : MonoBehaviour
@@ -15,8 +13,14 @@ public class TiredTimer : MonoBehaviour
 
     private IEnumerator TickTimer()
     {
-        tiredTime -= Time.deltaTime;
-        yield return 0;
+        while (tiredTime > 0)
+        {
+            tiredTime -= Time.deltaTime * timeMulti;
+            yield return null;
+        }
+
+        GameEvents.Instance.tiredTimerExpired.Invoke();
+        yield return null;
     }
 }
 

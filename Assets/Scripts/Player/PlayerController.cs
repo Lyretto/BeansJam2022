@@ -6,12 +6,19 @@ public class PlayerController : MonoBehaviour
    [SerializeField] private GameObject demonVisuals;
    [SerializeField] private GameObject childVisuals;
     
-    private void Awake()
-    {
-        throw new NotImplementedException();
-    }
+   
+   private void OnEnable()
+   {
+       GameEvents.Instance.tiredTimerExpired.AddListener(() => SwitchInto(PlayerState.Demon));
+   }
 
-    private void Start()
+   private void OnDisable()
+   {
+       if (!GameEvents.Instance) return;
+       GameEvents.Instance.tiredTimerExpired.RemoveListener(() => SwitchInto(PlayerState.Demon));
+   }
+   
+   private void Start()
     {
         SwitchInto(PlayerState.Child);
     }
@@ -21,8 +28,6 @@ public class PlayerController : MonoBehaviour
         var isChild = newState == PlayerState.Child;
         demonVisuals.SetActive(!isChild);
         childVisuals.SetActive(isChild);
-        
-        
     }
     
 }
