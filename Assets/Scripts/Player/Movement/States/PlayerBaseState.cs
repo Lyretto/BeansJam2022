@@ -16,13 +16,13 @@ public abstract class PlayerBaseState : State
 
         Vector3 moveDirection = cameraForward.normalized * stateMachine.InputReader.GetRawMovement().y + cameraRight.normalized * stateMachine.InputReader.GetRawMovement().x;
 
-        stateMachine.Velocity.x = moveDirection.x * stateMachine.MovementSpeed;
-        stateMachine.Velocity.z = moveDirection.z * stateMachine.MovementSpeed;
+        stateMachine.velocity.x = moveDirection.x * stateMachine.MovementSpeed;
+        stateMachine.velocity.z = moveDirection.z * stateMachine.MovementSpeed;
     }
 
     protected void FaceMoveDirection()
     {
-        Vector3 faceDirection = new(stateMachine.Velocity.x, 0f, stateMachine.Velocity.z);
+        Vector3 faceDirection = new(stateMachine.velocity.x, 0f, stateMachine.velocity.z);
 
         if (faceDirection == Vector3.zero)
             return;
@@ -32,14 +32,14 @@ public abstract class PlayerBaseState : State
 
     protected void ApplyGravity()
     {
-        if (stateMachine.Velocity.y > Physics.gravity.y)
+        if (stateMachine.velocity.y > Physics.gravity.y)
         {
-            stateMachine.Velocity.y += Physics.gravity.y * Time.deltaTime;
+            stateMachine.velocity.y += Physics.gravity.y * Time.deltaTime;
         }
     }
 
     protected void Move()
     {
-        stateMachine.Controller.Move(stateMachine.Velocity * Time.deltaTime);
+        stateMachine.Controller.Move(stateMachine.velocity * Time.deltaTime);
     }
 }

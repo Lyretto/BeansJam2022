@@ -4,10 +4,9 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerStateMachine : StateMachine
 {
-    public Vector3 Velocity;
-    public float MovementSpeed { get; private set; } = 5f;
-    public float JumpForce { get; private set; } = 5f;
-    public float LookRotationDampFactor { get; private set; } = 10f;
+    public Vector3 velocity;
+    public float MovementSpeed => 5f;
+    public float LookRotationDampFactor  => 10f;
     public Transform MainCamera { get; private set; }
     public Input InputReader { get; private set; }
     public Animator Animator { get; private set; }
@@ -15,7 +14,7 @@ public class PlayerStateMachine : StateMachine
 
     private void Start()
     {
-        MainCamera = Camera.main.transform;
+        if (Camera.main is not null) MainCamera = Camera.main.transform;
 
         InputReader = Input.Instance;
         Animator = GetComponent<Animator>();

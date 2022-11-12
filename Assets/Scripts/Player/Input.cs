@@ -26,4 +26,17 @@ public class Input : MonoBehaviour
     }
 
     public Vector2 GetRawMovement() => rawInputMovement;
+
+    public void OpenPause(InputAction.CallbackContext context)
+    {
+        if (!context.started) return;
+        //open pause
+    }
+    
+    public void ClosePause(InputAction.CallbackContext context)
+    {
+        if (!context.started) return;
+        //close pause
+    }
 }
+

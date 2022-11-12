@@ -2,14 +2,14 @@ using UnityEngine;
 using Animator = UnityEngine.Animator;
 using Physics = UnityEngine.Physics;
 
-public class PlayerMoveState : PlayerBaseState
+public class DemonMoveState : PlayerBaseState
 {
     private readonly int moveSpeedHash = Animator.StringToHash("MoveSpeed");
     private readonly int moveBlendTreeHash = Animator.StringToHash("MoveBlendTree");
     private const float AnimationDampTime = 0.1f;
     private const float CrossFadeDuration = 0.1f;
 
-    public PlayerMoveState(PlayerStateMachine stateMachine) : base(stateMachine) { }
+    public DemonMoveState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
     {
