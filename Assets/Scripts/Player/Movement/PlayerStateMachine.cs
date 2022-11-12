@@ -34,6 +34,7 @@ public class PlayerStateMachine : StateMachine
 
     private void OnDisable()
     {
+        if (!GameEvents.Instance) return;
         GameEvents.Instance.rage.RemoveListener(() => SwitchState(new DemonMoveState(this)));
         GameEvents.Instance.transforming.RemoveListener((_) => SwitchState(new TransformState(this)));
         GameEvents.Instance.calm.RemoveListener(() => SwitchState(new PlayerMoveState(this)));
