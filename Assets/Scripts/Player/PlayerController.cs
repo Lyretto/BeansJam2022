@@ -37,7 +37,11 @@ public class PlayerController : MonoBehaviour
 
    private void Start()
     {
-        SwitchInto(PlayerState.Child);
+        //SwitchInto(PlayerState.Child);
+        var isChild = true;
+        demonVisuals.ForEach(d =>  d.SetActive(!isChild));
+        childVisuals.ForEach(c => c.SetActive(isChild));
+        characterMesh.material = isChild ? childMaterial : demonMaterial;
     }
 
     public void SwitchInto(PlayerState newState)
@@ -50,12 +54,20 @@ public class PlayerController : MonoBehaviour
     {
         
         animator.SetTrigger(isChild ? "Calm" : "Sleep");
+        GameEvents.Instance.transforming.Invoke( isChild ? PlayerState.Child : PlayerState.Demon);
 
         yield return new WaitForSecondsRealtime(2f);
         
         demonVisuals.ForEach(d =>  d.SetActive(!isChild));
         childVisuals.ForEach(c => c.SetActive(isChild));
         characterMesh.material = isChild ? childMaterial : demonMaterial;
+        
+       
+        if(isChild)
+            GameEvents.Instance.calm.Invoke();
+        else
+            GameEvents.Instance.rage.Invoke();
+        
         yield return 0;
     }
 

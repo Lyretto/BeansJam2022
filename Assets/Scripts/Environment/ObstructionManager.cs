@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -6,7 +7,7 @@ public class ObstructionManager : MonoBehaviour
 {
     private static ObstructionManager _instance;
     [SerializeField] private List<GameObject> obstructionsPrefabs;
-    private readonly List<Obscrutction> remaining = new ();
+    private readonly List<Obstruction> remaining = new ();
 
     public static ObstructionManager Instance
     {
@@ -20,15 +21,20 @@ public class ObstructionManager : MonoBehaviour
             return _instance;
         }
     }
-    
-    // public void SpawnRandomObstruction(Vector3 position, Transform parent)
-    // {
-    //     var newObstruction =  Instantiate(obstructionsPrefabs[Random.Range(0, obstructionsPrefabs.Count)], position, Quaternion.identity, parent ? parent : transform);
-    //     remaining.Add(newObstruction.GetComponent<Obscrutction>());
-    // }
 
-    public void RemoveObstruction(Obscrutction destroyedOb)
+    private void OnEnable()
     {
+        GameEvents.Instance.obstructionHit.AddListener(RemoveObstruction);
+    }
+
+    private void OnDisable()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void RemoveObstruction(Obstruction destroyedOb)
+    {
+        if (destroyedOb && !destroyedOb.destroyed) return;
         remaining.Remove(destroyedOb);
         if (remaining.Count <= 0)
         {

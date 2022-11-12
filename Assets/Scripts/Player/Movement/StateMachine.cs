@@ -4,7 +4,7 @@ public abstract class StateMachine : MonoBehaviour
 {
     private State currentState;
 
-    public void SwitchState(State state)
+    protected void SwitchState(State state)
     {
         currentState?.Exit();
         currentState = state;
