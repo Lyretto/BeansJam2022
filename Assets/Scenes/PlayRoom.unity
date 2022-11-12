@@ -466,6 +466,15 @@ MonoBehaviour:
   interactInput:
     m_PersistentCalls:
       m_Calls: []
+  transforming:
+    m_PersistentCalls:
+      m_Calls: []
+  calm:
+    m_PersistentCalls:
+      m_Calls: []
+  obstructionHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &338494517
 GameObject:
   m_ObjectHideFlags: 3
@@ -535,7 +544,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 338494517}
-  m_LocalRotation: {x: 0.20985527, y: 0.0000000106290114, z: -0.0000000022813542,
+  m_LocalRotation: {x: 0.20985529, y: -0.0000000046707096, z: 0.0000000010024958,
     w: 0.9777325}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}

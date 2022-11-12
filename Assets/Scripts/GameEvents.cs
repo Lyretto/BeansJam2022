@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -29,4 +27,12 @@ public class GameEvents : MonoBehaviour
     public UnityEvent<Interactables> contactInteractable;
 
     public UnityEvent interactInput;
+
+    public UnityEvent<PlayerState> transforming;
+
+    public UnityEvent calm;
+
+    public UnityEvent<Obstruction> obstructionHit;
+
+    public UnityEvent rage;
 }

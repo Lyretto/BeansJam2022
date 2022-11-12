@@ -1,34 +1,17 @@
-using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    float tiredTimer = 0;
     private TiredTimer timer;
+    private RageMeter rageMeter;
     [SerializeField] private float startTime = 10;
-    
-    
-    private static GameManager _instance;
-
-    public static GameManager Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = FindObjectOfType<GameManager>();
-            }
-
-            return _instance;
-        }
-    }
 
     private void OnEnable()
     {
        GameEvents.Instance.tiredTimerExpired.AddListener(SwitchToDemon);
        GameEvents.Instance.togglePause.AddListener(Paused);
+       GameEvents.Instance.calm.AddListener(ResetTimer);
     }
 
     private void OnDisable()
@@ -36,22 +19,36 @@ public class GameManager : MonoBehaviour
         if (!GameEvents.Instance) return;
         GameEvents.Instance.tiredTimerExpired.RemoveListener(SwitchToDemon);
         GameEvents.Instance.togglePause.RemoveListener(Paused);
+        GameEvents.Instance.calm.RemoveListener(ResetTimer);
     }
+
 
     private void Paused(bool paused)
     {
         Time.timeScale = paused ? 0 : 1;
     }
 
-    private IEnumerator Start()
+    private void ResetTimer()
     {
-        // Generate Level
-        //yield return LevelGenerator.Generate();
-        
-        timer = gameObject.AddComponent<TiredTimer>();
         timer.tiredTime = startTime;
         timer.timeMulti = 1;
-        yield return 0;
+        timer.StartTimer();
+    }
+
+    private void ResetRageMeter()
+    {
+        rageMeter.ResetMeter();
+        rageMeter.ragePerObstruction = 1;
+        rageMeter.startRage = 10;
+    }
+    
+    private void Start()
+    {
+        // Generate Level
+        //LevelGenerator.Generate();
+        timer = gameObject.AddComponent<TiredTimer>();
+        rageMeter = gameObject.AddComponent<RageMeter>();
+        ResetTimer();
     }
 
     public void Restart()
@@ -59,7 +56,8 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("PlayRoom");
     }
 
-    public void SwitchToDemon()
+    private void SwitchToDemon()
     {
+        ResetRageMeter();
     }
 }
