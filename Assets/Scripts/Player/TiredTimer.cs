@@ -10,6 +10,11 @@ public class TiredTimer : MonoBehaviour
     {
         StartCoroutine(TickTimer());
     }
+    
+    public void AddTime(float time)
+    {
+        tiredTime += time;
+    }
 
     private IEnumerator TickTimer()
     {

@@ -37,7 +37,7 @@ public class MapGenerator : MonoBehaviour
 
     void GeneratePosition()
     {
-        Vector3 randPosition = new Vector3(Random.Range(-maxWidth, maxWidth), 0, Random.Range(-maxLength, maxLength));
+        Vector3 randPosition = new Vector3(Random.Range(-maxWidth, maxWidth), 0, Random.Range(-maxLength, maxLength))+transform.position;
         if (CheckPosition(randPosition)) PlaceObject(randPosition);
         else GeneratePosition();
     }
