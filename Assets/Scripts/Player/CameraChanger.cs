@@ -1,0 +1,35 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Cinemachine;
+
+public class CameraChanger : MonoBehaviour
+{
+    [SerializeField] CinemachineFreeLook childCam;
+    [SerializeField] CinemachineVirtualCamera demonCam;
+    bool childCamOn = true;
+
+    private void OnEnable()
+    {
+        GameEvents.Instance.transforming.AddListener(_ => SwitchPriority());
+    }
+
+    private void OnDisable()
+    {
+        GameEvents.Instance.transforming.RemoveListener(_ => SwitchPriority());
+    }
+
+    void SwitchPriority()
+    {
+        if (childCamOn)
+        {
+            childCam.Priority = 0;
+            demonCam.Priority = 1;
+        } else
+        {
+            childCam.Priority = 1;
+            demonCam.Priority = 0;
+        }
+        childCamOn = !childCamOn;
+    }
+}
