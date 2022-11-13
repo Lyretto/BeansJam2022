@@ -20,6 +20,8 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private List<GameObject> buildings;
     [SerializeField] private List<GameObject> objects;
 
+    private int bufferCount = 100;
+    
     // Start is called before the first frame update
     void Start()
     {        
@@ -37,6 +39,9 @@ public class MapGenerator : MonoBehaviour
 
     void GeneratePosition()
     {
+        if (bufferCount <= 0) return;
+        bufferCount--;
+        
         Vector3 randPosition = new Vector3(Random.Range(-maxWidth, maxWidth), 0, Random.Range(-maxLength, maxLength))+transform.position;
         if (CheckPosition(randPosition)) PlaceObject(randPosition);
         else GeneratePosition();
@@ -69,7 +74,8 @@ public class MapGenerator : MonoBehaviour
         {
             itemToSpread = objects[Random.Range(0, objects.Count)];
         }
-            
+
+        bufferCount += objectAmount;
         GeneratePosition();
     }
 }

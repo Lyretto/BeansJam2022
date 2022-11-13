@@ -5,6 +5,10 @@ public class Sweets : Interactables
 {
     [SerializeField] private float wakeTime = 1;
     
+    public override bool IsActivated()
+    {
+        return false;
+    }
 
     public override void Interact()
     {

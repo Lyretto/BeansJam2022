@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 namespace UI
@@ -15,6 +14,10 @@ namespace UI
         private void OnEnable()
         {
             GameEvents.Instance.togglePause.AddListener(TogglePause);
+        }
+        private void OnDisable()
+        {
+            GameEvents.Instance.togglePause.RemoveListener(TogglePause);
         }
 
         private void TogglePause(bool paused)

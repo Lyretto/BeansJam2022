@@ -15,7 +15,7 @@ public class TransformState : PlayerBaseState
     {
         stateMachine.velocity.y = Physics.gravity.y;
         
-        stateMachine.Animator.SetFloat(moveSpeedHash, 0f, AnimationDampTime, Time.deltaTime);
+        stateMachine.Animator.SetFloat(moveSpeedHash, 0f);;
 
         stateMachine.Animator.CrossFadeInFixedTime(moveBlendTreeHash, CrossFadeDuration);
     }

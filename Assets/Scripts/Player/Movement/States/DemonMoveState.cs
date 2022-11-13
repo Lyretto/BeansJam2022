@@ -24,7 +24,7 @@ public class DemonMoveState : PlayerBaseState
         FaceMoveDirection();
         RagedMove();
 
-        stateMachine.Animator.SetFloat(moveSpeedHash, new Vector3(stateMachine.velocity.x, 0, stateMachine.velocity.z).sqrMagnitude > 0f ? 1f : 0f, AnimationDampTime, Time.deltaTime);
+        stateMachine.Animator.SetFloat(moveSpeedHash, 1f);
     }
 
     public override void Exit()

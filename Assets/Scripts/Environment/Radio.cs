@@ -1,18 +1,26 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Radio : MonoBehaviour
+public class Radio : Interactables
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject turnOnObject;
+
+    private bool activated;
+    public override bool IsActivated() => activated;
+
+    public override void Interact()
     {
-        
+        turnOnObject.SetActive(!turnOnObject.activeSelf);
+        activated = true;
+        StartCoroutine(TimedRadio(30));
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator TimedRadio(float seconds)
     {
-        
+        Deselect();
+        turnOnObject.SetActive(true);
+        yield return new WaitForSeconds(seconds);
+        turnOnObject.SetActive(false);
+        activated = false;
     }
 }
