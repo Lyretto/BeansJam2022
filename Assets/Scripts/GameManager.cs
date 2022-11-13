@@ -1,10 +1,11 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private TiredTimer timer;
-    private RageMeter rageMeter;
+    [NonSerialized] public TiredTimer timer;
+    [NonSerialized] public RageMeter rageMeter;
     [SerializeField] private float startTime = 10;
 
     private void OnEnable()
@@ -44,8 +45,6 @@ public class GameManager : MonoBehaviour
     
     private void Start()
     {
-        // Generate Level
-        //LevelGenerator.Generate();
         timer = gameObject.AddComponent<TiredTimer>();
         rageMeter = gameObject.AddComponent<RageMeter>();
         ResetTimer();
