@@ -33,7 +33,7 @@ public class RageMeter : MonoBehaviour
         rageCount -= ragePerObstruction * rageMulti * obstructionMulti;
 
         if (rageCount > 0) return;
-        GameEvents.Instance.transforming.Invoke(PlayerState.Child);
+        GameEvents.Instance.rageDown.Invoke();
     }
     
 }

@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
    private void OnEnable()
    {
        GameEvents.Instance.tiredTimerExpired.AddListener(() => SwitchInto(PlayerState.Demon));
+       GameEvents.Instance.rageDown.AddListener(() => SwitchInto(PlayerState.Child));
        GameEvents.Instance.interactInput.AddListener(Interact);
    }
 
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour
        if (!GameEvents.Instance) return;
        GameEvents.Instance.interactInput.RemoveListener(Interact);
        GameEvents.Instance.tiredTimerExpired.RemoveListener(() => SwitchInto(PlayerState.Demon));
+       GameEvents.Instance.rageDown.RemoveListener(() => SwitchInto(PlayerState.Child));
    }
 
    private void Awake()
