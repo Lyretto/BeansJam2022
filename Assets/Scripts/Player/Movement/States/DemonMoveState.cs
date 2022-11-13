@@ -62,6 +62,9 @@ public class DemonMoveState : PlayerBaseState
 
         var tv = hit.gameObject.GetComponent<TV>();
         if (tv) tv.HitTV();
+
+        var box = hit.gameObject.GetComponent<Karton>();
+        if (box) box.HitBox();
         
         var vel = stateMachine.velocity;
         vel.y = 0;
