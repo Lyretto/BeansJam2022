@@ -16,13 +16,14 @@ public class TV : Interactables
         activated = true;
     }
 
-    private void OnCollisionEnter(Collision other)
+    public void HitTV()
     {
-        if (activated && other.gameObject.CompareTag("Player") && !other.gameObject.GetComponent<PlayerController>().isChild)
+        if (activated)
         {
             disableObject.SetActive(true);
             turnOnObject.SetActive(false);
             activated = false;
+            GameEvents.Instance.obstructionHit.Invoke(1);
         }
     }
 }
