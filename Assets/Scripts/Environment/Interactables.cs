@@ -7,7 +7,7 @@ public abstract class Interactables : MonoBehaviour
     private List<GameObject> meshs;
     private void Awake()
     {
-        meshs.AddRange( GetComponentsInChildren<MeshRenderer>().ToList().Select(m => m.gameObject));
+        meshs = GetComponentsInChildren<MeshRenderer>().ToList().Select(m => m.gameObject).ToList();
         gameObject.tag = "Interactable";
     }
 
@@ -15,6 +15,7 @@ public abstract class Interactables : MonoBehaviour
 
     public void Highlight()
     {
-        meshs.ForEach(m => m.layer = 10);
+        if(meshs != null && meshs.Count > 0)
+            meshs.ForEach(m => m.layer = 10);
     }
 }
