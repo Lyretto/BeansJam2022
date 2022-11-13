@@ -24,7 +24,7 @@ public class Obstruction : MonoBehaviour
 
     public void HitObstruction()
     {
-        GameEvents.Instance.obstructionHit.Invoke(this);
+        GameEvents.Instance.obstructionHit.Invoke(multiplier);
         if (patched)
         {
             patched = false;

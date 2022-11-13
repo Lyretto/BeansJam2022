@@ -59,6 +59,9 @@ public class DemonMoveState : PlayerBaseState
         
         if (obstruction)
             hit.gameObject.GetComponent<Obstruction>().HitObstruction();
+
+        var tv = hit.gameObject.GetComponent<TV>();
+        if (tv) tv.HitTV();
         
         var vel = stateMachine.velocity;
         vel.y = 0;
