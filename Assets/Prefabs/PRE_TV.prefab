@@ -4939,7 +4939,8 @@ GameObject:
   - component: {fileID: 5292309394169515794}
   - component: {fileID: 3737443392003933879}
   - component: {fileID: 5982337586755867678}
-  m_Layer: 0
+  - component: {fileID: 9147818988636018807}
+  m_Layer: 3
   m_Name: PRE_TV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5025,6 +5026,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &9147818988636018807
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4027471643707440725}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8034506
+  m_Center: {x: -0.47, y: 0, z: 0}
 --- !u!1 &4342941863668350713
 GameObject:
   m_ObjectHideFlags: 0
