@@ -17,6 +17,20 @@ public class PlayerController : MonoBehaviour
    private Collectables currentCollectable;
    private bool isChild;
    private static readonly int InteractTrigger = Animator.StringToHash("Interact");
+   
+   private static PlayerController _instance;
+   public static PlayerController Instance
+   {
+       get
+       {
+           if (_instance == null)
+           {
+               _instance = FindObjectOfType<PlayerController>();
+           }
+
+           return _instance;
+       }
+   }
 
 
    private void OnEnable()
