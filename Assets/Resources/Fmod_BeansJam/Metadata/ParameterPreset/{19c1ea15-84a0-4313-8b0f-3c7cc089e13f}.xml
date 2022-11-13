@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{19c1ea15-84a0-4313-8b0f-3c7cc089e13f}">
+		<property name="name">
+			<value>Zersörung</value>
+		</property>
+		<relationship name="folder">
+			<destination>{cadb1daa-5a4d-48e6-86bc-28baebc88627}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{a5b33218-f7e2-4bc4-a988-b45b0ef990d2}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{a5b33218-f7e2-4bc4-a988-b45b0ef990d2}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>5</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Intro</value>
+			<value>Grad 1</value>
+			<value>Grad 2</value>
+			<value>Grad 3</value>
+			<value>Ende</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

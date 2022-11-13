@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{b6ca05fa-c551-4fd3-b08c-e0dad6ad18cb}">
+		<property name="name">
+			<value>Wachheit</value>
+		</property>
+		<relationship name="folder">
+			<destination>{cadb1daa-5a4d-48e6-86bc-28baebc88627}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{813aa2ea-4b58-4259-a177-fb1c270c9f54}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{813aa2ea-4b58-4259-a177-fb1c270c9f54}">
+		<property name="maximum">
+			<value>100</value>
+		</property>
+		<property name="initialValue">
+			<value>100</value>
+		</property>
+		<property name="seekSpeed">
+			<value>5</value>
+		</property>
+		<property name="seekSpeedDescending">
+			<value>5</value>
+		</property>
+		<property name="seekSpeedAsymmetric">
+			<value>true</value>
+		</property>
+	</object>
+</objects>
