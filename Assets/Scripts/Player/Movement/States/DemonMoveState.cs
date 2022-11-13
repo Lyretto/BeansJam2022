@@ -54,6 +54,12 @@ public class DemonMoveState : PlayerBaseState
     public override void OnCollision(ControllerColliderHit hit)
     {
         if(hit.gameObject.layer == LayerMask.NameToLayer("Ground")) return;
+
+        var obstruction = hit.gameObject.GetComponent<Obstruction>();
+        
+        if (obstruction)
+            hit.gameObject.GetComponent<Obstruction>().HitObstruction();
+        
         var vel = stateMachine.velocity;
         vel.y = 0;
         var oldVelocity = vel.magnitude;

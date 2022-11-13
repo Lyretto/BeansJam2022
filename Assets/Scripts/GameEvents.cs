@@ -35,4 +35,6 @@ public class GameEvents : MonoBehaviour
     public UnityEvent<Obstruction> obstructionHit;
 
     public UnityEvent rage;
+
+    public UnityEvent rageDown;
 }

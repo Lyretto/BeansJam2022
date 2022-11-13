@@ -16,7 +16,7 @@ public class CameraChanger : MonoBehaviour
 
     private void OnDisable()
     {
-        GameEvents.Instance.transforming.RemoveListener(_ => SwitchPriority());
+        if(GameEvents.Instance) GameEvents.Instance.transforming.RemoveListener(_ => SwitchPriority());
     }
 
     void SwitchPriority()

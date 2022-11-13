@@ -54,7 +54,7 @@ MonoBehaviour:
     m_Bits: 8
   buildingPercentage: 0.4
   buildings:
-  - {fileID: 6212351242364174291, guid: f4fe3cc27765dfc4c8ce369d28ae4955, type: 3}
+  - {fileID: 6212351242364174291, guid: 7c9646070b3976648bc48a1181b4b72a, type: 3}
   - {fileID: 6212351242364174291, guid: 2fe1738f533ab1f42b437aeae0569c07, type: 3}
   - {fileID: 6212351242364174291, guid: f5722bea10405b54c83784a8615234c1, type: 3}
   objects:
