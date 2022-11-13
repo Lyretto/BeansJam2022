@@ -33,7 +33,6 @@ public class GameManager : MonoBehaviour
     private void ResetTimer()
     {
         timer.tiredTime = startTime;
-        timer.timeMulti = 1;
         timer.StartTimer();
     }
 
