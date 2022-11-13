@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1270,7 +1270,7 @@ PrefabInstance:
     - target: {fileID: 7560171242530750851, guid: 2855a29fb4b43b04e8207ac090b25427,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000002038775
+      value: 0.000000020387752
       objectReference: {fileID: 0}
     - target: {fileID: 7560171242530750851, guid: 2855a29fb4b43b04e8207ac090b25427,
         type: 3}
@@ -1533,6 +1533,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: IngameUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 2643233592017435128, guid: de91ca3ba7013e94eb03a0176b494a52,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2643233592017435128, guid: de91ca3ba7013e94eb03a0176b494a52,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 2643233592017435128, guid: de91ca3ba7013e94eb03a0176b494a52,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 2643233592017435134, guid: de91ca3ba7013e94eb03a0176b494a52,
         type: 3}
