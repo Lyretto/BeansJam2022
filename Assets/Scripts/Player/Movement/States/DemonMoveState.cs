@@ -1,6 +1,8 @@
 using UnityEngine;
 using Animator = UnityEngine.Animator;
 using Physics = UnityEngine.Physics;
+using Quaternion = UnityEngine.Quaternion;
+using Vector3 = UnityEngine.Vector3;
 
 public class DemonMoveState : PlayerBaseState
 {
@@ -31,21 +33,41 @@ public class DemonMoveState : PlayerBaseState
 
     private void CalculateMoveRageDirection()
     {
-        Vector3 cameraRight = new(stateMachine.MainCamera.right.x, 0, stateMachine.MainCamera.right.z);
+        var moveDirection = stateMachine.transform.rotation * Vector3.forward;
 
-        var moveDirection = cameraRight.normalized * stateMachine.InputReader.GetRawMovement().x;
-
-        // stateMachine.velocity.x = Mathf.Lerp(stateMachine.velocity.x, moveDirection.x * stateMachine.RageSpeed, stateMachine.RageControl);
-        // stateMachine.velocity.z = Mathf.Lerp(stateMachine.velocity.z, moveDirection.z * stateMachine.RageSpeed, stateMachine.RageControl);
-
-        var normalizedVector = new Vector3(stateMachine.velocity.x, 0, stateMachine.velocity.z).normalized;
-
-        stateMachine.velocity.x = normalizedVector.x * stateMachine.RageSpeed;
-        stateMachine.velocity.z = normalizedVector.y * stateMachine.RageSpeed;
+        var inputX = stateMachine.InputReader.GetRawMovement().x;
+        
+        inputX = Mathf.Abs(inputX) > 0 ? Mathf.Sign(inputX) : 0;
+        
+        moveDirection = Quaternion.AngleAxis( inputX * 100 * stateMachine.RageControl * Time.deltaTime, Vector3.up) * moveDirection;
+        
+        
+        stateMachine.velocity.x = moveDirection.x * stateMachine.RageSpeed;
+        stateMachine.velocity.z = moveDirection.z * stateMachine.RageSpeed;
     }
     
     private void RagedMove()
     {
         stateMachine.Controller.Move(stateMachine.velocity * Time.deltaTime);
+    }
+
+    public override void OnCollision(ControllerColliderHit hit)
+    {
+        if(hit.gameObject.layer == LayerMask.NameToLayer("Ground")) return;
+        var vel = stateMachine.velocity;
+        vel.y = 0;
+        var oldVelocity = vel.magnitude;
+        var direction = Vector3.Reflect(vel.normalized, hit.normal);
+        direction.y = 0;
+        stateMachine.velocity = direction * Mathf.Max(oldVelocity, 0f);
+        
+        Vector3 faceDirection = new(stateMachine.velocity.x, 0f, stateMachine.velocity.z);
+
+        if (faceDirection == Vector3.zero)
+            return;
+
+        stateMachine.transform.rotation = Quaternion.LookRotation(faceDirection);
+        
+        RagedMove();
     }
 }

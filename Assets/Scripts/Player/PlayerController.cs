@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger(isChild ? "Calm" : "Sleep");
         GameEvents.Instance.transforming.Invoke( isChild ? PlayerState.Child : PlayerState.Demon);
 
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSeconds(2f);
         
         demonVisuals.ForEach(d =>  d.SetActive(!isChild));
         childVisuals.ForEach(c => c.SetActive(isChild));

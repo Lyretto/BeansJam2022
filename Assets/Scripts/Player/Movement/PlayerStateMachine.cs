@@ -1,14 +1,15 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerStateMachine : StateMachine
 {
     public Vector3 velocity;
-    public float MovementSpeed => 5f;
+    public float MovementSpeed = 5f;
 
-    public float RageControl => 0.1f;
+    public float RageControl = 0.1f;
 
-    public float RageSpeed = 200f;
+    public float RageSpeed = 20f;
     public float LookRotationDampFactor  => 10f;
     public Transform MainCamera { get; private set; }
     public Input InputReader { get; private set; }
@@ -39,5 +40,9 @@ public class PlayerStateMachine : StateMachine
         GameEvents.Instance.transforming.RemoveListener((_) => SwitchState(new TransformState(this)));
         GameEvents.Instance.calm.RemoveListener(() => SwitchState(new PlayerMoveState(this)));
     }
-
+    
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        CurrentState.OnCollision(hit);
+    }
 }
