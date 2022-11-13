@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9147818988636018807}
   - component: {fileID: -6316215893177346394}
   m_Layer: 18
-  m_Name: PRE_TV
+  m_Name: PRE_TV 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
