@@ -253,6 +253,7 @@ MonoBehaviour:
   demonVisuals:
   - {fileID: 3275523953064311742}
   - {fileID: 7383330234830171881}
+  - {fileID: 4179113418421090480}
   childVisuals:
   - {fileID: 8759702034832244797}
   - {fileID: 8669364687183957968}
@@ -260,6 +261,7 @@ MonoBehaviour:
   demonMaterial: {fileID: 2100000, guid: 51da49bc077ed8747bf31d48a285fef7, type: 2}
   characterMesh: {fileID: 5442894207342585053}
   WakeAoes: []
+  isChild: 0
 --- !u!1 &3502794902502062680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,10 +1039,40 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1480511589085692884}
     m_Modifications:
+    - target: {fileID: 3255045625357146720, guid: 83688132730033642a0036c4fdc8c051,
+        type: 3}
+      propertyPath: VelocityModule.inWorldSpace
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255045625357146720, guid: 83688132730033642a0036c4fdc8c051,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255045625357146720, guid: 83688132730033642a0036c4fdc8c051,
+        type: 3}
+      propertyPath: VelocityModule.orbitalZ.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255045625357146720, guid: 83688132730033642a0036c4fdc8c051,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255045625357146723, guid: 83688132730033642a0036c4fdc8c051,
+        type: 3}
+      propertyPath: m_RenderAlignment
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3255045626803290369, guid: 83688132730033642a0036c4fdc8c051,
         type: 3}
       propertyPath: m_Name
       value: FX_Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255045626803290369, guid: 83688132730033642a0036c4fdc8c051,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3255045626803290374, guid: 83688132730033642a0036c4fdc8c051,
         type: 3}
@@ -1112,8 +1144,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 3255045627152276530, guid: 83688132730033642a0036c4fdc8c051,
+        type: 3}
+      propertyPath: m_RenderAlignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255045627152276531, guid: 83688132730033642a0036c4fdc8c051,
+        type: 3}
+      propertyPath: VelocityModule.inWorldSpace
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255045627152276531, guid: 83688132730033642a0036c4fdc8c051,
+        type: 3}
+      propertyPath: VelocityModule.orbitalZ.scalar
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83688132730033642a0036c4fdc8c051, type: 3}
+--- !u!1 &4179113418421090480 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3255045626803290369, guid: 83688132730033642a0036c4fdc8c051,
+    type: 3}
+  m_PrefabInstance: {fileID: 1500559883232229809}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2429013049187976943
 PrefabInstance:
   m_ObjectHideFlags: 0
