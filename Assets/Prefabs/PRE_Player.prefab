@@ -134,7 +134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0, z: 0}
-  RageSpeed: 2
+  MovementSpeed: 5
+  RageControl: 5
+  RageSpeed: 5
 --- !u!114 &3795548066325913940
 MonoBehaviour:
   m_ObjectHideFlags: 0
