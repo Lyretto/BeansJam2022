@@ -10,7 +10,7 @@ public class TriggerNotification : MonoBehaviour
 
     private void OnDisable()
     {
-        GameEvents.Instance.transforming.AddListener(OpenNotification);
+        GameEvents.Instance?.transforming.AddListener(OpenNotification);
     }
 
     private void OpenNotification(PlayerState state)
