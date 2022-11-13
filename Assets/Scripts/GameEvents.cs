@@ -32,7 +32,7 @@ public class GameEvents : MonoBehaviour
 
     public UnityEvent calm;
 
-    public UnityEvent<Obstruction> obstructionHit;
+    public UnityEvent<float> obstructionHit;
 
     public UnityEvent rage;
 

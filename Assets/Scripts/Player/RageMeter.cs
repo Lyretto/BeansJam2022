@@ -9,12 +9,13 @@ public class RageMeter : MonoBehaviour
 
     private void OnEnable()
     {
-        GameEvents.Instance.obstructionHit.AddListener((obstruction) => OnDestroyObstruction(obstruction.multiplier));
+        GameEvents.Instance.obstructionHit.AddListener((multiplier) => OnDestroyObstruction(multiplier));
+        
     }
     
     private void OnDisable()
     {
-        GameEvents.Instance.obstructionHit.RemoveListener((obstruction) => OnDestroyObstruction(obstruction.multiplier));
+        GameEvents.Instance.obstructionHit.RemoveListener((multiplier) => OnDestroyObstruction(multiplier));
     }
 
 

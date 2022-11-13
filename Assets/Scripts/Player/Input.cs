@@ -26,6 +26,17 @@ public class Input : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
     }
 
+    private void OnEnable()
+    {
+        GameEvents.Instance.togglePause.AddListener(PauseSwitchMap);
+    }
+
+    private void OnDisable()
+    {
+        if (!GameEvents.Instance) return;
+        GameEvents.Instance.togglePause.RemoveListener(PauseSwitchMap);
+    }
+
     public void MoveInput(InputAction.CallbackContext context)
     {
         rawInputMovement = context.ReadValue<Vector2>();
@@ -36,17 +47,20 @@ public class Input : MonoBehaviour
     public void OpenPause(InputAction.CallbackContext context)
     {
         if (!context.started) return;
-        playerInput.SwitchCurrentActionMap(InputMap.UI.ToString());
         GameEvents.Instance.togglePause.Invoke(true);
     }
     
     public void ClosePause(InputAction.CallbackContext context)
     {
         if (!context.started) return;
-        playerInput.SwitchCurrentActionMap(InputMap.Player.ToString());
         GameEvents.Instance.togglePause.Invoke(false);
     }
 
+    private void PauseSwitchMap(bool paused)
+    {
+        playerInput.SwitchCurrentActionMap(paused ? InputMap.UI.ToString() : InputMap.Player.ToString());
+    }
+    
     public void Interact(InputAction.CallbackContext context)
     {
         if (!context.started) return;
