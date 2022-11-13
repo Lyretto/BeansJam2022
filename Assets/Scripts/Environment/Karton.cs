@@ -34,7 +34,7 @@ public class Karton : Interactables
             box.SetActive(false);
             destructOb.SetActive(true);
             activated = false;
-            boxCollider.enabled = true;
+            boxCollider.enabled = false;
             GameEvents.Instance.obstructionHit.Invoke(1);
         }
     }
