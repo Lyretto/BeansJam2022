@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{94cbccef-884c-426f-9758-2a10f19dd0c6}">
 		<property name="name">
 			<value>Schritte</value>
@@ -32,7 +32,7 @@
 			<destination>{a42901dd-223d-499c-8c37-17b6b984eb7d}</destination>
 		</relationship>
 		<relationship name="banks">
-			<destination>{5de61a63-7b93-4b25-9690-182bd6e51c98}</destination>
+			<destination>{431bac5f-4fca-49b5-b192-cc4bd4ca5708}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{f2f3d16c-87c1-4eeb-b41e-232ba764b86a}">
@@ -117,6 +117,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{c8e76e8c-cf22-4382-82d4-5f477aef32d1}">
+		<property name="volume">
+			<value>8</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
