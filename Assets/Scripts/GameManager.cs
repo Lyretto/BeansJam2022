@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         rageMeter.startRage = 10;
     }
     
-    private void Start()
+    private void Awake()
     {
         timer = gameObject.AddComponent<TiredTimer>();
         rageMeter = gameObject.AddComponent<RageMeter>();
