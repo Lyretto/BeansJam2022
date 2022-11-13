@@ -59,7 +59,7 @@ public class MapGenerator : MonoBehaviour
     void ChooseObject()
     {
 
-        //Geb‰ude ausw‰hlen
+        //Geb√§ude ausw√§hlen
         if (buildingCounter < maxBuilding)
         {
             itemToSpread = buildings[Random.Range(0, buildings.Count)];
