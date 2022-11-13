@@ -35,7 +35,7 @@ public class Obstruction : MonoBehaviour
         destroyed = true;
         goodObject.SetActive(false);
         destroyedObject.SetActive(true);
-        ObstructionManager.Instance.remaining.Remove(this);
+        ObstructionManager.Instance.RemoveObstruction(this);
     }
 
     private void OnEnable()

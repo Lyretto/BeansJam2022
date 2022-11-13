@@ -20,7 +20,7 @@ public class ObstructionManager : MonoBehaviour
         }
     }
     
-    private void RemoveObstruction(Obstruction destroyedOb)
+    public void RemoveObstruction(Obstruction destroyedOb)
     {
         if (destroyedOb && !destroyedOb.destroyed) return;
         remaining.Remove(destroyedOb);

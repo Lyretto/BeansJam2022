@@ -33,11 +33,14 @@ namespace UI
         {
             GameEvents.Instance.togglePause.AddListener(TogglePause);
             GameEvents.Instance.transforming.AddListener(ToggleTransform);
+            GameEvents.Instance.lastObsctructionDestroyed.AddListener(OpenLooseScreen);
         }
         private void OnDisable()
         {
+            if (!GameEvents.Instance) return;
             GameEvents.Instance.togglePause.RemoveListener(TogglePause);
             GameEvents.Instance.transforming.RemoveListener(ToggleTransform);
+            GameEvents.Instance.lastObsctructionDestroyed.RemoveListener(OpenLooseScreen);
         }
 
         private void TogglePause(bool paused)
@@ -69,6 +72,7 @@ namespace UI
 
         private void OpenLooseScreen()
         {
+            Time.timeScale = 0;
             SetScore();
             looseScreen.SetActive(true);
         }
