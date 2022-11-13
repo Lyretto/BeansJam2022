@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{4140e2e3-173f-4efc-ba83-64458e0b90fa}">
 		<property name="name">
 			<value>TV</value>
@@ -32,7 +32,7 @@
 			<destination>{d6a3e78c-1c9b-4949-8cd7-a2a6956200fb}</destination>
 		</relationship>
 		<relationship name="banks">
-			<destination>{5de61a63-7b93-4b25-9690-182bd6e51c98}</destination>
+			<destination>{431bac5f-4fca-49b5-b192-cc4bd4ca5708}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{da412315-e856-480c-b90b-b53756e3afd3}">

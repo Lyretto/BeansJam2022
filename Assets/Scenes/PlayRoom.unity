@@ -348,6 +348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 386795406}
   - component: {fileID: 386795407}
+  - component: {fileID: 386795408}
   m_Layer: 0
   m_Name: StepSound
   m_TagString: Untagged
@@ -397,9 +398,75 @@ MonoBehaviour:
   TriggerOnce: 0
   Preload: 0
   Params: []
-  OverrideAttenuation: 1
+  OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 4.5
+  OverrideMaxDistance: 20
+--- !u!114 &386795408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386795405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -936383775
+      Data2: 1290281648
+      Data3: 1050050474
+      Data4: -1844701204
+    Path: "event:/Sounds/Ersch\xF6pft"
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!1 &394590404 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7455290105015134801, guid: 1ac60bd18fee3554790e8c3973e8e112,
+    type: 3}
+  m_PrefabInstance: {fileID: 475914204}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &394590407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394590404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 2047064493
+      Data2: 1337448545
+      Data3: -897054021
+      Data4: 1014809547
+    Path: event:/Sounds/Aufnehmen
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &475914204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -717,12 +784,12 @@ PrefabInstance:
     - target: {fileID: 7374001516622167894, guid: 1ab99d2283744c141967dcb3d24723f1,
         type: 3}
       propertyPath: objectAmount
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7374001516622167894, guid: 1ab99d2283744c141967dcb3d24723f1,
         type: 3}
       propertyPath: buildingPercentage
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7374001516622167894, guid: 1ab99d2283744c141967dcb3d24723f1,
         type: 3}
@@ -1055,6 +1122,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3502794901867413284, guid: dff35c8fa7649394caa4a7438de6432a,
+        type: 3}
+      propertyPath: RageControl
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3502794901867413291, guid: dff35c8fa7649394caa4a7438de6432a,
         type: 3}
       propertyPath: m_RootOrder
@@ -1254,6 +1326,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2276165411333688612, guid: 2855a29fb4b43b04e8207ac090b25427,
         type: 3}
+      propertyPath: EventReference.Path
+      value: "event:/Musik/Men\xFC"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276165411333688612, guid: 2855a29fb4b43b04e8207ac090b25427,
+        type: 3}
+      propertyPath: OverrideMaxDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276165411333688612, guid: 2855a29fb4b43b04e8207ac090b25427,
+        type: 3}
+      propertyPath: OverrideMinDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276165411333688612, guid: 2855a29fb4b43b04e8207ac090b25427,
+        type: 3}
+      propertyPath: EventReference.Guid.Data1
+      value: -1235059809
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276165411333688612, guid: 2855a29fb4b43b04e8207ac090b25427,
+        type: 3}
+      propertyPath: EventReference.Guid.Data2
+      value: 1195329234
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276165411333688612, guid: 2855a29fb4b43b04e8207ac090b25427,
+        type: 3}
+      propertyPath: EventReference.Guid.Data3
+      value: 2022531202
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276165411333688612, guid: 2855a29fb4b43b04e8207ac090b25427,
+        type: 3}
+      propertyPath: EventReference.Guid.Data4
+      value: -964309721
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276165411333688612, guid: 2855a29fb4b43b04e8207ac090b25427,
+        type: 3}
       propertyPath: Params.Array.data[0].Name
       value: Wachheit
       objectReference: {fileID: 0}
@@ -1265,18 +1372,17 @@ PrefabInstance:
     - target: {fileID: 7560171242530750851, guid: 2855a29fb4b43b04e8207ac090b25427,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.2098553
+      value: 0.20985527
       objectReference: {fileID: 0}
     - target: {fileID: 7560171242530750851, guid: 2855a29fb4b43b04e8207ac090b25427,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000020387752
+      value: -0.0000000106290114
       objectReference: {fileID: 0}
     - target: {fileID: 7560171242530750851, guid: 2855a29fb4b43b04e8207ac090b25427,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000043759183
-      value: 0.0000000022813547
+      value: 0.0000000022813542
       objectReference: {fileID: 0}
     - target: {fileID: 7560171243603682263, guid: 2855a29fb4b43b04e8207ac090b25427,
         type: 3}
@@ -1371,22 +1477,22 @@ PrefabInstance:
     - target: {fileID: 7560171244284589373, guid: 2855a29fb4b43b04e8207ac090b25427,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000016939147
+      value: -0.000000016939147
       objectReference: {fileID: 0}
     - target: {fileID: 7560171244284589373, guid: 2855a29fb4b43b04e8207ac090b25427,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000003020736
+      value: 0.000000003020736
       objectReference: {fileID: 0}
     - target: {fileID: 7560171244449458191, guid: 2855a29fb4b43b04e8207ac090b25427,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000084695735
+      value: -0.0000000084695735
       objectReference: {fileID: 0}
     - target: {fileID: 7560171244449458191, guid: 2855a29fb4b43b04e8207ac090b25427,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000015103678
+      value: 0.0000000015103678
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2855a29fb4b43b04e8207ac090b25427, type: 3}
