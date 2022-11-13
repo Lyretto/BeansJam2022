@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="EncodableAsset" id="{f7f6756f-b1ed-44df-a585-e14cd1021985}">
+		<property name="assetPath">
+			<value>Theme Teufel/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9befab32-3d6f-4a44-8232-80253b4ea8fc}</destination>
+		</relationship>
+	</object>
+</objects>

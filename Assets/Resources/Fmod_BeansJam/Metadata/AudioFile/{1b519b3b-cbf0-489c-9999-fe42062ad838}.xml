@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{1b519b3b-cbf0-489c-9999-fe42062ad838}">
 		<property name="assetPath">
-			<value>Theme Baby BoxVibraphon.ogg</value>
+			<value>Theme Baby/Theme Baby BoxVibraphon.ogg</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{1623d80e-38bf-4830-93dc-9b19b41567e2}">
 		<property name="assetPath">
-			<value>Theme Baby Transition zu 3.ogg</value>
+			<value>Theme Baby/Theme Baby Transition zu 3.ogg</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

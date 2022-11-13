@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{06a1e045-427f-49ef-903e-07a0c5b2a7f0}">
 		<property name="assetPath">
-			<value>Theme Teufel Part 1 Synth.ogg</value>
+			<value>Theme Teufel/Theme Teufel Part 1 Synth.ogg</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
