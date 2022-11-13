@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -26,15 +27,23 @@ public class Input : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
     }
 
+    private void Start()
+    {
+        Time.timeScale = 1;
+        playerInput.SwitchCurrentActionMap(InputMap.Player.ToString());
+    }
+
     private void OnEnable()
     {
         GameEvents.Instance.togglePause.AddListener(PauseSwitchMap);
+        GameEvents.Instance.lastObsctructionDestroyed.AddListener(() => playerInput.SwitchCurrentActionMap(InputMap.UI.ToString()));
     }
 
     private void OnDisable()
     {
         if (!GameEvents.Instance) return;
         GameEvents.Instance.togglePause.RemoveListener(PauseSwitchMap);
+        GameEvents.Instance.lastObsctructionDestroyed.RemoveListener(() => playerInput.SwitchCurrentActionMap(InputMap.UI.ToString()));
     }
 
     public void MoveInput(InputAction.CallbackContext context)
@@ -60,7 +69,7 @@ public class Input : MonoBehaviour
     {
         playerInput.SwitchCurrentActionMap(paused ? InputMap.UI.ToString() : InputMap.Player.ToString());
     }
-    
+
     public void Interact(InputAction.CallbackContext context)
     {
         if (!context.started) return;
