@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
    private Animator animator;
    private Interactables currentInteractable;
    private Collectables currentCollectable;
-   private bool isChild;
+   public bool isChild;
    private static readonly int InteractTrigger = Animator.StringToHash("Interact");
    
    private static PlayerController _instance;
