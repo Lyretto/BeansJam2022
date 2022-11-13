@@ -25,11 +25,29 @@ public class CameraChanger : MonoBehaviour
         {
             childCam.Priority = 0;
             demonCam.Priority = 1;
+            StartCoroutine(SwitchToDemonCam());
         } else
         {
             childCam.Priority = 1;
             demonCam.Priority = 0;
         }
         childCamOn = !childCamOn;
+    }
+
+    private IEnumerator SwitchToDemonCam()
+    {
+        var timer = 1f;
+        var demonOffset = demonCam.GetComponent<CinemachineCameraOffset>();
+        var endOffset = demonOffset.m_Offset.z;
+        var startOffset = 8f;
+
+        while (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            demonOffset.m_Offset.z = Mathf.Lerp(startOffset,endOffset, 1-timer);
+            yield return 0;
+        }
+
+        demonOffset.m_Offset.z = endOffset;
     }
 }
