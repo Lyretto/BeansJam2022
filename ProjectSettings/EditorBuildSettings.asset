@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlayRoom.unity
     guid: c1499399ca92e354f8bb080cedeac857
+  - enabled: 1
+    path: Assets/Scenes/Option.unity
+    guid: c797d77b84b7c71468535c72b506002e
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 7608effd5747a9e419df291b8dfda8cc
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 31af6f4b927875c42a90a9f4cef385c8
   m_configObjects: {}
