@@ -722,7 +722,7 @@ PrefabInstance:
     - target: {fileID: 7374001516622167894, guid: 1ab99d2283744c141967dcb3d24723f1,
         type: 3}
       propertyPath: buildingPercentage
-      value: 0.1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7374001516622167894, guid: 1ab99d2283744c141967dcb3d24723f1,
         type: 3}
@@ -740,6 +740,35 @@ PrefabInstance:
       propertyPath: objects.Array.data[5]
       value: 
       objectReference: {fileID: 3644290213630841862, guid: 631a2fcdb956604428e790d181539b03,
+        type: 3}
+    - target: {fileID: 7374001516622167894, guid: 1ab99d2283744c141967dcb3d24723f1,
+        type: 3}
+      propertyPath: respawnableObj.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7374001516622167894, guid: 1ab99d2283744c141967dcb3d24723f1,
+        type: 3}
+      propertyPath: respawnableObj.Array.data[0]
+      value: 
+      objectReference: {fileID: 5214479214033520795, guid: 01db381f7b8bed746b5978153dbd006b,
+        type: 3}
+    - target: {fileID: 7374001516622167894, guid: 1ab99d2283744c141967dcb3d24723f1,
+        type: 3}
+      propertyPath: respawnableObj.Array.data[1]
+      value: 
+      objectReference: {fileID: 5214479214033520795, guid: d868a00bdb53d3d448aa935dd894e6ba,
+        type: 3}
+    - target: {fileID: 7374001516622167894, guid: 1ab99d2283744c141967dcb3d24723f1,
+        type: 3}
+      propertyPath: respawnableObj.Array.data[2]
+      value: 
+      objectReference: {fileID: 5214479214033520795, guid: f1cea48dc06b86343b28a5b32a900053,
+        type: 3}
+    - target: {fileID: 7374001516622167894, guid: 1ab99d2283744c141967dcb3d24723f1,
+        type: 3}
+      propertyPath: respawnableObj.Array.data[3]
+      value: 
+      objectReference: {fileID: 2105044082914874830, guid: 057cdf7c91354d54a9287debecfe72f2,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ab99d2283744c141967dcb3d24723f1, type: 3}
@@ -1265,18 +1294,17 @@ PrefabInstance:
     - target: {fileID: 7560171242530750851, guid: 2855a29fb4b43b04e8207ac090b25427,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.2098553
+      value: 0.20985529
       objectReference: {fileID: 0}
     - target: {fileID: 7560171242530750851, guid: 2855a29fb4b43b04e8207ac090b25427,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000020387752
+      value: 0.0000000046707096
       objectReference: {fileID: 0}
     - target: {fileID: 7560171242530750851, guid: 2855a29fb4b43b04e8207ac090b25427,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000043759183
-      value: 0.0000000022813547
+      value: -0.0000000010024958
       objectReference: {fileID: 0}
     - target: {fileID: 7560171243603682263, guid: 2855a29fb4b43b04e8207ac090b25427,
         type: 3}

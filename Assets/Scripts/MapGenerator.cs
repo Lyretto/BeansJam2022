@@ -19,6 +19,7 @@ public class MapGenerator : MonoBehaviour
 
     [SerializeField] private List<GameObject> buildings;
     [SerializeField] private List<GameObject> objects;
+    [SerializeField] private List<GameObject> respawnableObj;
 
     private int bufferCount = 100;
     
@@ -26,6 +27,34 @@ public class MapGenerator : MonoBehaviour
     void Start()
     {        
         GenerateMap();
+    }
+
+    private void OnEnable()
+    {
+        GameEvents.Instance.transforming.AddListener(SpawnOnRuntime);
+    }
+
+    private void OnDisable()
+    {
+        GameEvents.Instance.transforming.RemoveListener(SpawnOnRuntime);
+    }
+
+    void SpawnOnRuntime(PlayerState state)
+    {
+        int spawnOnRuntimeBufferCount = 30;
+        if(state == PlayerState.Child)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                itemToSpread = respawnableObj[Random.Range(0, respawnableObj.Count)];
+                if (spawnOnRuntimeBufferCount <= 0) return;
+                spawnOnRuntimeBufferCount--;
+
+                Vector3 randPosition = new Vector3(Random.Range(-maxWidth, maxWidth), 0, Random.Range(-maxLength, maxLength)) + transform.position;
+                if (CheckPosition(randPosition)) PlaceObject(randPosition);
+                else GeneratePosition();
+            }
+        }
     }
 
     void GenerateMap()
