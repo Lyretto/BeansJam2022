@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class Croco : Interactables
 {
+    [SerializeField] private GameObject trap;
+    private bool activated;
+    public override bool IsActivated() => activated;
+
     public override void Interact()
     {
-        throw new System.NotImplementedException();
+        trap.SetActive(true);
+        activated = true;
     }
 }

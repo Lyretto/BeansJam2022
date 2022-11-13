@@ -11,9 +11,11 @@ public class PlayerController : MonoBehaviour
    [SerializeField] private Material demonMaterial;
    [SerializeField] private SkinnedMeshRenderer characterMesh;
 
+   public List<WakeAOE> WakeAoes = new();
    private Animator animator;
    private Interactables currentInteractable;
    private Collectables currentCollectable;
+   private bool isChild;
    private static readonly int InteractTrigger = Animator.StringToHash("Interact");
 
 
@@ -40,7 +42,7 @@ public class PlayerController : MonoBehaviour
    private void Start()
     {
         //SwitchInto(PlayerState.Child);
-        var isChild = true;
+        isChild = true;
         demonVisuals.ForEach(d =>  d.SetActive(!isChild));
         childVisuals.ForEach(c => c.SetActive(isChild));
         characterMesh.material = isChild ? childMaterial : demonMaterial;
@@ -48,24 +50,28 @@ public class PlayerController : MonoBehaviour
 
     public void SwitchInto(PlayerState newState)
     {
-        var isChild = newState == PlayerState.Child;
+        isChild = newState == PlayerState.Child;
+        
+        if(!isChild)
+            DeselectInteractable();
+        
         StartCoroutine(BlendState(isChild));
     }
     
-    private IEnumerator BlendState(bool isChild)
+    private IEnumerator BlendState(bool isBlendToChild)
     {
         
-        animator.SetTrigger(isChild ? "Calm" : "Sleep");
-        GameEvents.Instance.transforming.Invoke( isChild ? PlayerState.Child : PlayerState.Demon);
+        animator.SetTrigger(isBlendToChild ? "Calm" : "Sleep");
+        GameEvents.Instance.transforming.Invoke( isBlendToChild ? PlayerState.Child : PlayerState.Demon);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(isBlendToChild ? 1f : 1.5f);
         
-        demonVisuals.ForEach(d =>  d.SetActive(!isChild));
-        childVisuals.ForEach(c => c.SetActive(isChild));
-        characterMesh.material = isChild ? childMaterial : demonMaterial;
+        demonVisuals.ForEach(d =>  d.SetActive(!isBlendToChild));
+        childVisuals.ForEach(c => c.SetActive(isBlendToChild));
+        characterMesh.material = isBlendToChild ? childMaterial : demonMaterial;
         
        
-        if(isChild)
+        if(isBlendToChild)
             GameEvents.Instance.calm.Invoke();
         else
             GameEvents.Instance.rage.Invoke();
@@ -75,16 +81,37 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Interactable"))
+        if (other.CompareTag("Interactable") && isChild)
         {
-            currentInteractable = other.GetComponent<Interactables>();
+            var interactable = (Interactables) other.GetComponent(typeof(Interactables));
+            if (interactable && currentCollectable == interactable || interactable.IsActivated()) return;
+            if(currentInteractable) currentInteractable.Deselect();
+            currentInteractable = interactable;
+            currentInteractable.Highlight();
         }
     }
 
-    public void Interact()
+    private void OnTriggerExit(Collider other)
     {
-        if (!currentInteractable) return;
-        currentCollectable.Interact();
+        if (other.CompareTag("Interactable") && isChild)
+        {
+            var interactable = (Interactables) other.GetComponent(typeof(Interactables));
+            if (interactable && currentInteractable != interactable) return;
+            DeselectInteractable();
+        }
+    }
+
+    private void DeselectInteractable()
+    {
+        if(currentInteractable) currentInteractable.Deselect();
+        currentInteractable = null;
+    }
+
+    private void Interact()
+    {
+        if (currentInteractable == null || !isChild || currentInteractable.IsActivated()) return;
+        currentInteractable.Interact();
+        currentCollectable = null;
         animator.SetTrigger(InteractTrigger);
     }
 }

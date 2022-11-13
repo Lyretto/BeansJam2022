@@ -1,12 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TV : Interactables
 {
+    [SerializeField] private GameObject turnOnObject;
+
+    private bool activated;
+    public override bool IsActivated() => activated;
 
     public override void Interact()
     {
-        throw new System.NotImplementedException();
+        Deselect();
+        turnOnObject.SetActive(!turnOnObject.activeSelf);
+        activated = true;
     }
 }
