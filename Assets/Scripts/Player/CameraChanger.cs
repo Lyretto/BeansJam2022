@@ -9,6 +9,16 @@ public class CameraChanger : MonoBehaviour
     [SerializeField] CinemachineVirtualCamera demonCam;
     bool childCamOn = true;
 
+    private void Start()
+    {
+        childCam.m_XAxis.m_MaxSpeed = 400 * Settings.Instance.mouseSens;
+    }
+
+    private void Update()
+    {
+        Debug.Log(childCam.m_XAxis.m_MaxSpeed);
+    }
+
     private void OnEnable()
     {
         GameEvents.Instance.transforming.AddListener(_ => SwitchPriority());

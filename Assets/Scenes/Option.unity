@@ -675,6 +675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 624903222}
   - component: {fileID: 624903223}
+  - component: {fileID: 624903224}
   m_Layer: 5
   m_Name: AudioSlider
   m_TagString: Untagged
@@ -730,6 +731,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &624903224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624903221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bff938c556bd344c895cb0d45a68d84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSlider: {fileID: 1744859671}
+  soundSlider: {fileID: 229924219}
 --- !u!1 &646028681
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,6 +828,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 832479597}
+  - component: {fileID: 832479598}
   m_Layer: 5
   m_Name: MouseSlider
   m_TagString: Untagged
@@ -841,6 +857,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &832479598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832479596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db2d87f654960a3488f36a1d04347f66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseSlider: {fileID: 1803466743}
 --- !u!1 &1023168591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1793,7 +1822,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
