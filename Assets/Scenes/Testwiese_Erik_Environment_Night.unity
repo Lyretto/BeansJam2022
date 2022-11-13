@@ -741,17 +741,17 @@ PrefabInstance:
     - target: {fileID: 7560171242530750851, guid: 2855a29fb4b43b04e8207ac090b25427,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.20985527
+      value: 0.2098553
       objectReference: {fileID: 0}
     - target: {fileID: 7560171242530750851, guid: 2855a29fb4b43b04e8207ac090b25427,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000106290114
+      value: -0.000000020387752
       objectReference: {fileID: 0}
     - target: {fileID: 7560171242530750851, guid: 2855a29fb4b43b04e8207ac090b25427,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000022813542
+      value: 0.0000000043759187
       objectReference: {fileID: 0}
     - target: {fileID: 7560171243603682263, guid: 2855a29fb4b43b04e8207ac090b25427,
         type: 3}
@@ -842,6 +842,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000003020736
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560171244284589374, guid: 2855a29fb4b43b04e8207ac090b25427,
+        type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7560171244449458191, guid: 2855a29fb4b43b04e8207ac090b25427,
         type: 3}
@@ -6944,6 +6949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startTime: 10
+  rageCount: 3
 --- !u!4 &1772793592
 Transform:
   m_ObjectHideFlags: 0

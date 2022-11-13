@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     [NonSerialized] public TiredTimer timer;
     [NonSerialized] public RageMeter rageMeter;
     [SerializeField] private float startTime = 10;
+    [SerializeField] private float rageCount = 3;
 
     private void OnEnable()
     {
@@ -38,9 +39,9 @@ public class GameManager : MonoBehaviour
 
     private void ResetRageMeter()
     {
-        rageMeter.ResetMeter();
         rageMeter.ragePerObstruction = 1;
-        rageMeter.startRage = 10;
+        rageMeter.startRage = rageCount;
+        rageMeter.ResetMeter();
     }
     
     private void Awake()

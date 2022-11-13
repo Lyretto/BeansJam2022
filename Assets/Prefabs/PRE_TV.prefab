@@ -128,7 +128,8 @@ GameObject:
   - component: {fileID: 3737443392003933879}
   - component: {fileID: 5982337586755867678}
   - component: {fileID: 9147818988636018807}
-  m_Layer: 3
+  - component: {fileID: -6316215893177346394}
+  m_Layer: 18
   m_Name: PRE_TV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +143,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4027471643707440725}
-  m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -1.25, y: 1, z: 6.25}
   m_LocalScale: {x: 1, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
@@ -227,6 +228,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.8034506
   m_Center: {x: -0.47, y: 0, z: 0}
+--- !u!114 &-6316215893177346394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4027471643707440725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1eb7507628e294f96880739fdfaeca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4342941863668350713
 GameObject:
   m_ObjectHideFlags: 0

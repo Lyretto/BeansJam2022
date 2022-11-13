@@ -1,4 +1,4 @@
-public class Collectables : Interactables
+public abstract class Collectables : Interactables
 {
     public override void Interact()
     {
