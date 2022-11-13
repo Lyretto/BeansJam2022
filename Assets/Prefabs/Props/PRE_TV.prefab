@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnOnObject: {fileID: 7023832779063619472}
-  disableObject: {fileID: 0}
+  disableObject: {fileID: 4402725520210423344}
 --- !u!1 &4342941863668350713
 GameObject:
   m_ObjectHideFlags: 0
@@ -5097,6 +5097,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 882653567139945988}
+  - component: {fileID: 2310758826302261760}
   m_Layer: 0
   m_Name: EnableTV
   m_TagString: Untagged
@@ -5123,6 +5124,36 @@ Transform:
   m_Father: {fileID: 1870477500817621441}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2310758826302261760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7023832779063619472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1094771427
+      Data2: 1325143871
+      Data3: 1164215226
+      Data4: -91223154
+    Path: event:/Sounds/TV
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 0.74
+  OverrideMaxDistance: 4.39
 --- !u!1 &9142831784378424436
 GameObject:
   m_ObjectHideFlags: 0
@@ -10024,6 +10055,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c01e00f603fe8674d9ef427019d4bceb, type: 3}
+--- !u!1 &4402725520210423344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4402725521336300177, guid: c01e00f603fe8674d9ef427019d4bceb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1165728929}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4402725520210423351 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4402725521336300182, guid: c01e00f603fe8674d9ef427019d4bceb,
