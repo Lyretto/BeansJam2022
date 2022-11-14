@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="ParameterPreset" id="{9b7221ab-4658-4bcf-a914-51cea3babf2b}">
 		<property name="name">
-			<value>Radio</value>
+			<value>Baby - Teufel</value>
 		</property>
 		<relationship name="folder">
 			<destination>{cadb1daa-5a4d-48e6-86bc-28baebc88627}</destination>
@@ -19,8 +19,8 @@
 			<value>2</value>
 		</property>
 		<property name="enumerationLabels">
-			<value>Aus</value>
-			<value>An</value>
+			<value>Baby</value>
+			<value>Teufel</value>
 		</property>
 		<property name="initialValue">
 			<value>0</value>

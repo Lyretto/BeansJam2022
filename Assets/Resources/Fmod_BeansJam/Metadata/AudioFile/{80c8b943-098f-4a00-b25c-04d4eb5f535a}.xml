@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{80c8b943-098f-4a00-b25c-04d4eb5f535a}">
+		<property name="assetPath">
+			<value>Theme Teufel.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>80.553038548752838</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9befab32-3d6f-4a44-8232-80253b4ea8fc}</destination>
+		</relationship>
+	</object>
+</objects>

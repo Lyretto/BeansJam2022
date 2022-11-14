@@ -87,6 +87,7 @@ public class PlayerController : MonoBehaviour
        
         if(isBlendToChild)
             GameEvents.Instance.calm.Invoke();
+            
         else
             GameEvents.Instance.rage.Invoke();
         

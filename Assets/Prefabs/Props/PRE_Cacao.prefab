@@ -123,11 +123,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1012894637
-      Data2: 1281254599
-      Data3: 1427350172
-      Data4: 365113617
-    Path: event:/Sounds/Trinken
+      Data1: -1394531820
+      Data2: 1192990866
+      Data3: 2127162275
+      Data4: 1611949789
+    Path: event:/Sounds/Essen
   Event: 
   PlayEvent: 2
   StopEvent: 0

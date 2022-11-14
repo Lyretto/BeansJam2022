@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{f9c27692-97b2-41ac-bae5-f5f7bc01157e}">
 		<property name="assetPath">
-			<value>Menü.ogg</value>
+			<value>Theme Baby/Menü.ogg</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
