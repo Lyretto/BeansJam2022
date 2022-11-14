@@ -6,6 +6,7 @@ public class Slime : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && !other.gameObject.GetComponent<PlayerController>().isChild)
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/In Schleim stecken", transform.position);
             GameEvents.Instance.rage.Invoke();
             Destroy(transform.parent.gameObject, 2f);
         }
