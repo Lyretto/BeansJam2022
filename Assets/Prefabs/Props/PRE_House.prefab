@@ -130,6 +130,7 @@ MonoBehaviour:
   multiplier: 1
   destroyedObject: {fileID: 594010803343508462}
   goodObject: {fileID: 6000805909615350430}
+  "Zerst\xF6ren": "event:/Sounds/Zerst\xF6ren"
 --- !u!1 &6355517773042384055
 GameObject:
   m_ObjectHideFlags: 0

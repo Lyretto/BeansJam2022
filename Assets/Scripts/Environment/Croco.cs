@@ -12,5 +12,6 @@ public class Croco : Interactables
         can.SetActive(false);
         trap.SetActive(true);
         activated = true;
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/Schleim umwerfen", transform.position);
     }
 }

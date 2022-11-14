@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{9a04755f-d6b0-4baf-8607-00d7b69902be}">
 		<property name="assetPath">
 			<value>Schritte/SchrittFuß2.ogg</value>
@@ -11,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>0.12054166666666667</value>
+			<value>0.43304166666666666</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{9befab32-3d6f-4a44-8232-80253b4ea8fc}</destination>

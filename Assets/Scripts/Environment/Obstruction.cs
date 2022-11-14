@@ -10,6 +10,8 @@ public class Obstruction : MonoBehaviour
     [SerializeField] private GameObject destroyedObject;
     [SerializeField] private GameObject goodObject;
 
+    public string Zerstören;
+
 
     private void Awake()
     {
@@ -24,6 +26,7 @@ public class Obstruction : MonoBehaviour
 
     public void HitObstruction()
     {
+    
         GameEvents.Instance.obstructionHit.Invoke(multiplier);
         if (patched)
         {
@@ -31,6 +34,7 @@ public class Obstruction : MonoBehaviour
             return;
         }
 
+        FMODUnity.RuntimeManager.PlayOneShot(Zerstören, transform.position);
         collider.enabled = false;
         destroyed = true;
         goodObject.SetActive(false);

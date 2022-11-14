@@ -25,10 +25,6 @@
 		<relationship name="markerTracks">
 			<destination>{df3c827e-402f-459d-b3bb-74e9d58f4333}</destination>
 			<destination>{8ced79de-002f-40c8-b116-e1186dc82749}</destination>
-			<destination>{4df4ba39-9de8-4e18-81da-b5aa2aa93369}</destination>
-			<destination>{4e2707ad-c661-4476-9bfd-88f35a67747e}</destination>
-			<destination>{b8ed8025-c963-475c-a9f2-12efaf49b818}</destination>
-			<destination>{58c581da-423d-4faf-b084-dd0d71fd3561}</destination>
 		</relationship>
 		<relationship name="groupTracks">
 			<destination>{d08735f7-5523-4569-bbbd-a4ed7acd29dd}</destination>
@@ -67,10 +63,6 @@
 	<object class="EventAutomatableProperties" id="{04745f38-177b-4671-bb51-f471d3a72d60}" />
 	<object class="MarkerTrack" id="{df3c827e-402f-459d-b3bb-74e9d58f4333}" />
 	<object class="MarkerTrack" id="{8ced79de-002f-40c8-b116-e1186dc82749}" />
-	<object class="MarkerTrack" id="{4df4ba39-9de8-4e18-81da-b5aa2aa93369}" />
-	<object class="MarkerTrack" id="{4e2707ad-c661-4476-9bfd-88f35a67747e}" />
-	<object class="MarkerTrack" id="{b8ed8025-c963-475c-a9f2-12efaf49b818}" />
-	<object class="MarkerTrack" id="{58c581da-423d-4faf-b084-dd0d71fd3561}" />
 	<object class="GroupTrack" id="{d08735f7-5523-4569-bbbd-a4ed7acd29dd}">
 		<relationship name="modules">
 			<destination>{1f5db5bf-c8b4-40f9-b84d-c2c22a78f128}</destination>
@@ -87,7 +79,6 @@
 			<destination>{0aaad027-f3a3-4dd2-93b9-a7426b93659e}</destination>
 			<destination>{eb2bf945-cc46-41fa-a396-b6878c5d098f}</destination>
 			<destination>{384215e4-95cb-4d3c-8f29-c847da1d19ae}</destination>
-			<destination>{83a3dccb-b4c1-4c17-b7d4-4def61278a17}</destination>
 			<destination>{5f85b5c7-bc19-45d2-8a18-848aaf468a05}</destination>
 		</relationship>
 	</object>
@@ -184,20 +175,6 @@
 		</relationship>
 		<relationship name="markerTrack">
 			<destination>{df3c827e-402f-459d-b3bb-74e9d58f4333}</destination>
-		</relationship>
-	</object>
-	<object class="NamedMarker" id="{83a3dccb-b4c1-4c17-b7d4-4def61278a17}">
-		<property name="position">
-			<value>74.227256119839225</value>
-		</property>
-		<property name="name">
-			<value>Schlaf</value>
-		</property>
-		<relationship name="timeline">
-			<destination>{531287ca-baf9-4e3d-a82a-5891a437a2a1}</destination>
-		</relationship>
-		<relationship name="markerTrack">
-			<destination>{58c581da-423d-4faf-b084-dd0d71fd3561}</destination>
 		</relationship>
 	</object>
 	<object class="LoopRegion" id="{5f85b5c7-bc19-45d2-8a18-848aaf468a05}">

@@ -109,6 +109,7 @@ MonoBehaviour:
   box: {fileID: 3692705922632133953}
   foldedBox: {fileID: 2087420852264976861}
   destructOb: {fileID: 931130752264617639}
+  Kaputt: event:/Sounds/Karton Aufstellen
 --- !u!1 &3692705922632133953
 GameObject:
   m_ObjectHideFlags: 0

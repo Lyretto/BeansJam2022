@@ -8,6 +8,8 @@ public class Karton : Interactables
     private BoxCollider boxCollider;
     private bool activated;
     public override bool IsActivated() => activated;
+
+    public string Kaputt;
     
     public override void Interact()
     {
@@ -30,6 +32,7 @@ public class Karton : Interactables
     {
         if (activated)
         {
+            FMODUnity.RuntimeManager.PlayOneShot(Kaputt, transform.position);
             foldedBox.SetActive(true);
             box.SetActive(false);
             destructOb.SetActive(true);
