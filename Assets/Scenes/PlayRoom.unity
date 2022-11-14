@@ -213,7 +213,7 @@ MonoBehaviour:
     Path: "event:/Sounds/Zerst\xF6ren"
   Event: 
   PlayEvent: 11
-  StopEvent: 0
+  StopEvent: 12
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -585,7 +585,7 @@ PrefabInstance:
     - target: {fileID: 51349711526744884, guid: 1ac60bd18fee3554790e8c3973e8e112,
         type: 3}
       propertyPath: OverrideMinDistance
-      value: 0.5
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 2805537015153756600, guid: 1ac60bd18fee3554790e8c3973e8e112,
         type: 3}
@@ -1103,6 +1103,11 @@ PrefabInstance:
       propertyPath: OverrideMaxDistance
       value: 6.39
       objectReference: {fileID: 0}
+    - target: {fileID: 2310758826302261760, guid: 5fef7d6edc78d96469f8ae5bdc4b686e,
+        type: 3}
+      propertyPath: OverrideMinDistance
+      value: 2.54
+      objectReference: {fileID: 0}
     - target: {fileID: 4027471643707440725, guid: 5fef7d6edc78d96469f8ae5bdc4b686e,
         type: 3}
       propertyPath: m_Name
@@ -1166,6 +1171,11 @@ PrefabInstance:
     - target: {fileID: 5213400260448093251, guid: 5fef7d6edc78d96469f8ae5bdc4b686e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543702360678712418, guid: 5fef7d6edc78d96469f8ae5bdc4b686e,
+        type: 3}
+      propertyPath: OverrideAttenuation
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7023832779063619472, guid: 5fef7d6edc78d96469f8ae5bdc4b686e,
@@ -1684,22 +1694,22 @@ PrefabInstance:
     - target: {fileID: 7560171244284589373, guid: 2855a29fb4b43b04e8207ac090b25427,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000016939147
+      value: -0.000000016939147
       objectReference: {fileID: 0}
     - target: {fileID: 7560171244284589373, guid: 2855a29fb4b43b04e8207ac090b25427,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000003020736
+      value: 0.000000003020736
       objectReference: {fileID: 0}
     - target: {fileID: 7560171244449458191, guid: 2855a29fb4b43b04e8207ac090b25427,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000084695735
+      value: -0.0000000084695735
       objectReference: {fileID: 0}
     - target: {fileID: 7560171244449458191, guid: 2855a29fb4b43b04e8207ac090b25427,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000015103678
+      value: 0.0000000015103678
       objectReference: {fileID: 0}
     - target: {fileID: 7932677677936255407, guid: 2855a29fb4b43b04e8207ac090b25427,
         type: 3}

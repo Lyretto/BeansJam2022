@@ -14,6 +14,7 @@ public class TV : Interactables
         Deselect();
         turnOnObject.SetActive(!turnOnObject.activeSelf);
         activated = true;
+        disableObject.SetActive(false);
     }
 
     public void HitTV()
