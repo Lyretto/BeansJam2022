@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 4804826669973429275}
   - component: {fileID: 4693706847828454599}
   - component: {fileID: -2385948919082849261}
-  - component: {fileID: 4418159465045518997}
   m_Layer: 3
   m_Name: PRE_Sweets
   m_TagString: Untagged
@@ -107,37 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6c8fcd0355f5d4199b484da0fcc074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EssenSound: event:/Sounds/Essen
   wakeTime: 1
---- !u!114 &4418159465045518997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5214479214033520795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -1394531820
-      Data2: 1192990866
-      Data3: 2127162275
-      Data4: 1611949789
-    Path: event:/Sounds/Essen
-  Event: 
-  PlayEvent: 2
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1001 &8242984126192698919
 PrefabInstance:
   m_ObjectHideFlags: 0

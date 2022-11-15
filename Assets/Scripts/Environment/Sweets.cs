@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Sweets : Interactables
 {
+    public string EssenSound;
+    
     [SerializeField] private float wakeTime = 1;
     
     public override bool IsActivated()
@@ -21,5 +23,7 @@ public class Sweets : Interactables
     {
         yield return null;
         Destroy(gameObject);
+
+        FMODUnity.RuntimeManager.PlayOneShot(EssenSound);
     }
 }
